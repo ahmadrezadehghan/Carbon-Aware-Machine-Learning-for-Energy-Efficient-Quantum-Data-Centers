@@ -1,0 +1,6 @@
+REM اجرای سه سیاست با بهترین تنظیم تونر (برای بازتولید)
+python -m gqdc.experiments.simulate_facility --config configs/config.yaml --policy all ^
+  --fixed_setpoint 6.01 --cool_fraction 1.09 ^
+  --cop_min_at6 2.32 --cop_max_at12 5.66 ^
+  --ambient_base_c 21.1 --ambient_swing_c 7.11 ^
+  --econ_max_gain 0.21

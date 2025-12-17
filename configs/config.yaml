@@ -1,0 +1,23 @@
+experiment:
+  seed: 42
+  runs_per_condition: 20
+  sla_deadline_s: 180
+  scheduler: fifo         # options: fifo, milp, rl_ppo
+  objective_weights: {energy: 1.0, avg_wait: 0.2, sla_risk: 5.0, carbon: 0.5}
+
+workloads: [QFT-8, Grover-8, QPE-6, GHZ-16, BV-12, VQE-small]
+
+signals:
+  arrivals:
+    rate_per_min: 0.3
+    diurnal_amp: 0.2
+  carbon:
+    base: 300
+    swing: 250
+    noise: 40
+
+energy_proxy:
+  alpha_1q: 1.0
+  beta_2q: 5.0
+  gamma_meas: 1.0
+  overhead_per_min: 3.0
